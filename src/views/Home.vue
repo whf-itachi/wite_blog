@@ -2,6 +2,7 @@
 import PostList from "../components/PostList.vue"
 import getPosts from "../composable/getPosts"
 import { ref } from 'vue'
+import SpinnerVue from "../components/Spinner.vue";
 
 const {posts, load} = getPosts()
 load()
@@ -13,7 +14,9 @@ const showPosts = ref(true)
         <div v-if="posts.length" class="layout"> 
             <PostList :posts="posts" v-if="showPosts" />
         </div>
-        <div v-else>加载中...</div>
+        <div v-else>
+            <SpinnerVue />
+        </div>
         
         <button @click="showPosts = !showPosts">显示/隐藏</button>
 
