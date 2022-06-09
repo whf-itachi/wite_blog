@@ -27,6 +27,10 @@ const props = defineProps({
     margin-right: 10px;
 }
 .post {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.post p {
     color: #444;
     line-height: 1.5em;
     margin-top: 40px;

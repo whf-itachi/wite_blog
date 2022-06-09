@@ -3,6 +3,7 @@ import PostList from "../components/PostList.vue"
 import getPosts from "../composable/getPosts"
 import { ref } from 'vue'
 import SpinnerVue from "../components/Spinner.vue";
+import TagCloud from '../components/TagCloud.vue'
 
 const {posts, load} = getPosts()
 load()
@@ -13,6 +14,7 @@ const showPosts = ref(true)
     <div class="home">
         <div v-if="posts.length" class="layout"> 
             <PostList :posts="posts" v-if="showPosts" />
+            <TagCloud :posts="posts" />
         </div>
         <div v-else>
             <SpinnerVue />
@@ -33,8 +35,7 @@ const showPosts = ref(true)
 
 .layout {
     display: grid;
-    left: 30px;
-    grid-template-columns: 3tr 1tr;
+    grid-template-columns: 3fr 1fr;
     gap: 20px;
 }
 </style>

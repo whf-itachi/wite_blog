@@ -22,7 +22,7 @@ defineProps({
 </script>
 
 <template>
-<div>博客内容</div>
+
 <div class="post-list">
     <div v-for="post in posts" :key="post.id">
         <SinglePost :post="post" />
